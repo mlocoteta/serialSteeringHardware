@@ -1,0 +1,54 @@
+Altium Designer Pick and Place Locations
+C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V1I1\Project Outputs for MCU_EPS\Pick Place\Pick Place for LKAS-EPS_PCB_V1I1.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       19/12/20
+Time:       23:50
+Revision:   Not in VersionControl
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"R17","CRCW0805330RFKEA","TopLayer","RESC2013X50X30NL20T20","1747.606","2994.937","270",""
+"R14","CRCW0805330RFKEA","TopLayer","RESC2013X50X30NL20T20","1469.000","2995.095","90",""
+"LED2","150080BS75000","TopLayer","0805_A","1665.606","3000.843","90","SMD mono-color Chip LED, WL-SMCW, Blue"
+"LED1","150080SS75000","TopLayer","0805_A","1390.000","3001.000","90","SMD mono-color Chip LED, WL-SMCW, Super Red"
+"SW6","76STC04T","TopLayer","76STC04T","2267.662","2586.059","270","SWITCH TOGGLE DIP SPDT 150MA 30V
+WIRED:
+1  2  3  4   5   6
+7  8  9  10 11 12"
+"U4","LM339DR2G","TopLayer","ONSC-SOIC-14-751A-03_V","2090.000","3323.724","90","Single Supply Quad Comparators, 0 to 70 degC, 14-Pin SOIC, Pb-Free, Tape and Reel"
+"R8","4K7 1%","TopLayer","RESC0603(1608)_N","2004.000","3517.000","90","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R3","4K7 1%","TopLayer","RESC0603(1608)_N","1664.358","3355.000","180","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R1","4K7 1%","TopLayer","RESC0603(1608)_N","1940.000","3517.000","90","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R6","4K7 1%","TopLayer","RESC0603(1608)_N","1708.000","3275.000","90","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"C14","0.1uF","TopLayer","C0805","1788.000","3326.102","90","CAP CER 0.1UF 100V X7R 0805"
+"C10","0.1uF","TopLayer","C0805","932.000","3474.000","90","CAP CER 0.1UF 100V X7R 0805"
+"C9","0.1uF","TopLayer","C0805","626.000","3652.000","270","CAP CER 0.1UF 100V X7R 0805"
+"C11","0.1uF","TopLayer","C0805","625.000","3506.000","90","CAP CER 0.1UF 100V X7R 0805"
+"R4","4K7 1%","TopLayer","RESC0603(1608)_N","2004.000","3131.000","270","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R2","4K7 1%","TopLayer","RESC0603(1608)_N","2139.000","3131.000","270","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R7","4K7 1%","TopLayer","RESC0603(1608)_N","1940.000","3131.000","270","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R5","4K7 1%","TopLayer","RESC0603(1608)_N","2240.000","3131.000","270","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"C13","0.1uF","TopLayer","C0805","3002.000","3387.000","90","CAP CER 0.1UF 100V X7R 0805"
+"U3","MCP2562FD-E/SN","TopLayer","MCP2561","782.000","3581.000","270","8 SOIC 3.90mm(.150in) TUBECAN Flexible Data Rate Transceiver"
+"U2","MCP2562FD-E/SN","TopLayer","MCP2561","467.000","3581.000","270","8 SOIC 3.90mm(.150in) TUBECAN Flexible Data Rate Transceiver"
+"U1","UA7805CKTTR","TopLayer","KTT0003A_V","2243.181","3794.000","180","Fixed Positive Voltage Regulator, 7 to 25 V, 1.5 A, 0 to 125 degC, 3-Pin DDPAK (KTT), Green (RoHS
+& no Sb/Br), Tape and Reel"
+"R23","4K7 1%","TopLayer","RESC0603(1608)_N","3074.000","3381.094","90","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"R22","4K7 1%","TopLayer","RESC0603(1608)_N","3075.000","3515.000","90","4K7 0.1W 1% 0603 (1608 Metric)  SMD"
+"J3","686115148922","TopLayer","686115148922","642.110","3024.866","360","SMT ZIF Connectors Hinge Type WR-FPC, Horizontal, Bottom Contact, pitch 1 mm, 15 pins"
+"J2","MX34020NF1","TopLayer","MX34020NF1","3095.835","2438.275","180","JAE MX34 Series, 2.2mm Pitch 20 Way 2 Row Right Angle PCB Header, Solder Termination, 3A"
+"J1","MX34020SF1","BottomLayer","MX34020SF1","3084.518","3075.081","180","Automotive Connectors Sckt HOUSING 20P"
+"F1","1812L050/30PR","TopLayer","LFUS-1812L05030PR_V","3309.000","3478.000","90","PTC Resettable Fuse, 0.8 W, 30 V, -40 to 85 degC, 2-Pin SMD, RoHS, Tape and Reel"
+"C12","0.1uF","TopLayer","C0805","1203.000","3033.598","90","CAP CER 0.1UF 100V X7R 0805"
+"C8","0.1uF","TopLayer","C0805","314.000","3506.000","270","CAP CER 0.1UF 100V X7R 0805"
+"C7","0.1uF","TopLayer","C0805","202.000","3718.000","360","CAP CER 0.1UF 100V X7R 0805"
+"C6","0.1uF","TopLayer","C0805","202.000","3627.000","360","CAP CER 0.1UF 100V X7R 0805"
+"C5","0.1uF","TopLayer","C0805","81.000","3684.598","90","CAP CER 0.1UF 100V X7R 0805"
+"C4","CL31A106KBHNNNE","TopLayer","FP-CL31-IPC_C","2708.000","3710.232","90","CAP CER 10UF 50V X5R 1206"
+"C3","0.1uF","TopLayer","C0805","2607.000","3846.000","90","CAP CER 0.1UF 100V X7R 0805"
+"C1","0.1uF","TopLayer","C0805","2608.000","3700.402","270","CAP CER 0.1UF 100V X7R 0805"
+"BRD1","Teensy 4.0","TopLayer","TEENSY_4.0","733.000","3568.000","360",""

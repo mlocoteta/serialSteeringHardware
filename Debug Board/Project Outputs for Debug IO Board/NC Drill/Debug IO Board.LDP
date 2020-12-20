@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\Debug Board\Debug IO Board.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=debug io board-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=debug io board-slotholes.txt|DrillLayers=gtl,gbl

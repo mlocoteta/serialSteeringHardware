@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Debug MCU.PcbDoc]
+   Generated File[Debug MCU-RoundHoles.TXT]
+   Generated File[Debug MCU-SlotHoles.TXT]
+   Generated File[Debug MCU.LDP]
+   Generated File[Debug MCU.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 8:49:59 PM On 7/3/2020
