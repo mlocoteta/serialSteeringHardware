@@ -26,7 +26,7 @@ The board consists of:
 - Teensy 4.0 
 
 When mounted the board is slightly larger than the the factory cover can contain. 
-![LKAS/ECU Manipulator PCB without Teensy 4.0](pics/mount.png)
+![LKAS/ECU Manipulator PCB without Teensy 4.0](pics/mount.jpg)
 
 ## Debug Board
 The board consists of: 
