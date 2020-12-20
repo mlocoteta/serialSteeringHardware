@@ -1,9 +1,0 @@
-G04:AMPARAMS|DCode=25|XSize=94.49mil|YSize=181.1mil|CornerRadius=47.24mil|HoleSize=0mil|Usage=FLASHONLY|Rotation=180.000|XOffset=0mil|YOffset=0mil|HoleType=Round|Shape=RoundedRectangle|*
-%AMROUNDEDRECTD25*
-21,1,0.09449,0.08661,0,0,180.0*
-21,1,0.00000,0.18110,0,0,180.0*
-1,1,0.09449,0.00000,0.04331*
-1,1,0.09449,0.00000,0.04331*
-1,1,0.09449,0.00000,-0.04331*
-1,1,0.09449,0.00000,-0.04331*
-%

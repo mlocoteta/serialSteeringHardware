@@ -1,13 +1,14 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : PCB Document [Debug IO Board.PcbDoc]
-   Generated File[Debug IO Board-RoundHoles.TXT]
-   Generated File[Debug IO Board-SlotHoles.TXT]
-   Generated File[Debug IO Board.LDP]
-   Generated File[Debug IO Board.DRR]
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 12:04:05 AM On 12/20/2020
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Schematic Document [Debug IO Board.SchDoc]
+   Generated File[Bill of Materials-Debug IO Board.xlsx]
 
 
-Files Generated   : 4
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 11:47:37 PM On 12/19/2020
+Finished Output Generation At 12:04:09 AM On 12/20/2020

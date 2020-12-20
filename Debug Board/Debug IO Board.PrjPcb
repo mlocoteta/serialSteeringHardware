@@ -30,7 +30,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=1
-OutputPath=Project Outputs for Debug IO Board
+OutputPath=
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -91,123 +91,123 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board-RoundHoles.TXT
+DocumentPath=Project Outputs for Debug IO Board\BOM\Bill of Materials-Debug IO Board.xlsx
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board-SlotHoles.TXT
+DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board-RoundHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.1
+DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board-SlotHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board.DRR
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.1
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.EXTREP
+DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBL
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBO
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBP
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBS
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GKO
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM1
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM2
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM3
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM5
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM13
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM5
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM15
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM16
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM20
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM16
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM21
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM20
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM23
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM21
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM24
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM23
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GML
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GM24
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTL
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GML
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTO
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTP
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTS
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board.LDP
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.REP
+DocumentPath=Project Outputs for Debug IO Board\NC Drill\Debug IO Board.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.RUL
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.REP
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for MCU EPS Debug Board\Design Rule Check - Debug MCU.html
+DocumentPath=Project Outputs for Debug IO Board\Gerber\Debug IO Board.RUL
 DItemRevisionGUID=
 
 [Parameter1]
@@ -225,7 +225,7 @@ ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
 
 [Generic_EDE]
-OutputDir=Project Outputs for Debug IO Board
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
