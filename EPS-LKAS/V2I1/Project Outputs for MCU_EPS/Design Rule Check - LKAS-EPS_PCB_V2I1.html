@@ -1,0 +1,470 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD20\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12/21/2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">12:19:06 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:03</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc" class="file"><acronym title="C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc">C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">46</td></tr>
+</table>
+</td>
+</table><a name="IDIA1RXIWPWDKDJXRJM5SATRVAEZQCI1C4Z0JWWOA3RC4LPYHT5RJ"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1BXJL2S3SHRQGXQTV0NHVB2YGBEBLW1CBOODZEJIU0JPXCSGO0L">Clearance Constraint (Gap=5mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1RH1XHDUMWAIN3EGA23E30LXOLOJEXZEYCB2X1JYPPVRCL1YJUFC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPKQXJWMEYPZ0FFFFDQZXL0AHWBQE1CDUM3J2FXDD423QYEOVR5H">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOMWOJX1DMVM2MZZ5WTR0UJM4VPRTEJSCUPYJMRCLMUB5RQOYKFWP">Width Constraint (Min=5mil) (Max=1000mil) (Preferred=5mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDQBLJQXQSLJETF1ELCRUIXGEVKCPV1NHTSR13DZDBUTM2KAQ1E5JF">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ352GL2QJIITFI4E5FPER1NQ5BK5JOMJHNZGHELHGJNEDGHNTNVJ">Power Plane Connect Rule(Relief Connect )(Expansion=11.811mil) (Conductor Width=39.37mil) (Air Gap=5mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBAVCSIWDLEQ3HVV0RZNML4MUMGPNAXFYRQHIZINBHA4OMEBXLQM">Minimum Annular Ring (Minimum=3mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNSWEMAMLWG3MNJUASPMIWPUFDPEV25FW1K1V4HK0F2ZPT4I3ARZJ">Hole Size Constraint (Min=11.811mil) (Max=248.031mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDV0USK2PRGFCMJUPEECLV1ODXWLFNRF0ADCAN04F0ZS2N14N1AB5D">Hole To Hole Clearance (Gap=9.842mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVP3BV34SELYYPY4SXMAKVNZSNNQUH5UZCIB4WHB11AGG25GLZ1JG">Minimum Solder Mask Sliver (Gap=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW4EX4R2K3V0BJQR523NV2P2KSPWW4WSGENKIG3G5LULCUVTOBULN">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</a></td>
+<td class="column2">46</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYKGLJ4OTHZA0BKDWOEDONRBQHGJGF5GW0OVB3IJSAXUXYEKBO0NP">Silk to Silk (Clearance=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1MYHOWJWVHMVBTPJ5U4S34EVGDMGPOO5N21DWRL0SCSIDO0Y1M">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDEQPEWZDGOUOUCQD3GFHC3HFWVBXANC2OL5OJS5JDYVWROXP0JSL">Height Constraint (Min=0mil) (Max=71497.938mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">46</td>
+</tr>
+</table><br><a name="IDW4EX4R2K3V0BJQR523NV2P2KSPWW4WSGENKIG3G5LULCUVTOBULN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=5mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9279.367mil|Location2.X=9285.617mil|Location1.Y=8574.28mil|Location2.Y=8580.53mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9279.367mil|Location2.X=9285.617mil|Location1.Y=8574.28mil|Location2.Y=8580.53mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (3.822mil &lt; 5mil) Between Arc (2292.929mil,3572mil) on Top Overlay And Pad R7-1(2268mil,3596mil) on Top Layer [Top Overlay] to [Top Solder] clearance [3.822mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10603.532mil|Location2.X=10609.782mil|Location1.Y=8651.221mil|Location2.Y=8657.471mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10603.532mil|Location2.X=10609.782mil|Location1.Y=8651.221mil|Location2.Y=8657.471mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1mil &lt; 5mil) Between Arc (3617mil,3654.347mil) on Top Overlay And Pad C6-1(3587.457mil,3664mil) on Top Layer [Top Overlay] to [Top Solder] clearance [1mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10619.755mil|Location2.X=10624.088mil|Location1.Y=8652.18mil|Location2.Y=8656.513mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10619.755mil|Location2.X=10624.088mil|Location1.Y=8652.18mil|Location2.Y=8656.513mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Arc (3617mil,3654.347mil) on Top Overlay And Pad C6-2(3644.543mil,3664mil) on Top Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9527.382mil|Location2.X=9533.632mil|Location1.Y=7907.283mil|Location2.Y=7913.533mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9527.382mil|Location2.X=9533.632mil|Location1.Y=7907.283mil|Location2.Y=7913.533mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.012mil &lt; 5mil) Between Pad C4-2(2553.232mil,2945mil) on Top Layer And Track (2499.173mil,2905.465mil)(2568.071mil,2905.465mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.012mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8741.819mil|Location2.Y=8748.069mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8741.819mil|Location2.Y=8748.069mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R1-1(2268mil,3762.66mil) on Top Layer And Track (2289.653mil,3735.108mil)(2289.653mil,3790.226mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10244.092mil|Location2.X=10250.342mil|Location1.Y=8365.165mil|Location2.Y=8371.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10244.092mil|Location2.X=10250.342mil|Location1.Y=8365.165mil|Location2.Y=8371.415mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R11-1(3262.472mil,3386.006mil) on Top Layer And Track (3240.819mil,3358.441mil)(3240.819mil,3413.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10333.658mil|Location2.X=10339.908mil|Location1.Y=8365.165mil|Location2.Y=8371.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10333.658mil|Location2.X=10339.908mil|Location1.Y=8365.165mil|Location2.Y=8371.415mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R11-2(3321.528mil,3386.006mil) on Top Layer And Track (3343.181mil,3358.441mil)(3343.181mil,3413.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8741.819mil|Location2.Y=8748.069mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8741.819mil|Location2.Y=8748.069mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R1-2(2208.945mil,3762.66mil) on Top Layer And Track (2187.291mil,3735.108mil)(2187.291mil,3790.226mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10569.092mil|Location2.X=10575.342mil|Location1.Y=8707.165mil|Location2.Y=8713.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10569.092mil|Location2.X=10575.342mil|Location1.Y=8707.165mil|Location2.Y=8713.415mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R12-1(3587.472mil,3728.006mil) on Top Layer And Track (3565.819mil,3700.441mil)(3565.819mil,3755.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10658.658mil|Location2.X=10664.908mil|Location1.Y=8707.165mil|Location2.Y=8713.415mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10658.658mil|Location2.X=10664.908mil|Location1.Y=8707.165mil|Location2.Y=8713.415mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R12-2(3646.528mil,3728.006mil) on Top Layer And Track (3668.181mil,3700.441mil)(3668.181mil,3755.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9634.592mil|Location2.X=9640.842mil|Location1.Y=8416.619mil|Location2.Y=8422.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9634.592mil|Location2.X=9640.842mil|Location1.Y=8416.619mil|Location2.Y=8422.869mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R2-1(2620mil,3435mil) on Top Layer And Track (2592.447mil,3413.347mil)(2647.566mil,3413.347mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9599.158mil|Location2.X=9605.408mil|Location1.Y=8506.186mil|Location2.Y=8512.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9599.158mil|Location2.X=9605.408mil|Location1.Y=8506.186mil|Location2.Y=8512.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R2-2(2620mil,3494.055mil) on Top Layer And Track (2592.447mil,3515.709mil)(2647.566mil,3515.709mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9783.708mil|Location2.X=9789.958mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9783.708mil|Location2.X=9789.958mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R22-1(2804.549mil,3625.528mil) on Top Layer And Track (2776.983mil,3647.181mil)(2832.102mil,3647.181mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9819.14mil|Location2.X=9825.39mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9819.14mil|Location2.X=9825.39mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R22-2(2804.549mil,3566.472mil) on Top Layer And Track (2776.983mil,3544.819mil)(2832.102mil,3544.819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9759.714mil|Location2.X=9765.964mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9759.714mil|Location2.X=9765.964mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R23-1(2745.122mil,3566.472mil) on Top Layer And Track (2717.57mil,3544.819mil)(2772.688mil,3544.819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9724.281mil|Location2.X=9730.531mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9724.281mil|Location2.X=9730.531mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R23-2(2745.122mil,3625.528mil) on Top Layer And Track (2717.57mil,3647.181mil)(2772.688mil,3647.181mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9778.165mil|Location2.X=9784.415mil|Location1.Y=8786.658mil|Location2.Y=8792.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9778.165mil|Location2.X=9784.415mil|Location1.Y=8786.658mil|Location2.Y=8792.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R3-1(2799.006mil,3774.528mil) on Top Layer And Track (2771.441mil,3796.181mil)(2826.559mil,3796.181mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9813.598mil|Location2.X=9819.848mil|Location1.Y=8697.092mil|Location2.Y=8703.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9813.598mil|Location2.X=9819.848mil|Location1.Y=8697.092mil|Location2.Y=8703.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R3-2(2799.006mil,3715.472mil) on Top Layer And Track (2771.441mil,3693.819mil)(2826.559mil,3693.819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9252.08mil|Location2.X=9258.33mil|Location1.Y=8669.985mil|Location2.Y=8676.235mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9252.08mil|Location2.X=9258.33mil|Location1.Y=8669.985mil|Location2.Y=8676.235mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.787mil &lt; 5mil) Between Pad R4-1(2268mil,3653mil) on Top Layer And Track (2187.291mil,3679.441mil)(2289.653mil,3679.441mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.787mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8632.158mil|Location2.Y=8638.408mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8632.158mil|Location2.Y=8638.408mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R4-1(2268mil,3653mil) on Top Layer And Track (2289.653mil,3625.447mil)(2289.653mil,3680.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8632.158mil|Location2.Y=8638.408mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8632.158mil|Location2.Y=8638.408mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R4-2(2208.945mil,3653mil) on Top Layer And Track (2187.291mil,3625.447mil)(2187.291mil,3680.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9193.024mil|Location2.X=9199.274mil|Location1.Y=8669.985mil|Location2.Y=8676.235mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9193.024mil|Location2.X=9199.274mil|Location1.Y=8669.985mil|Location2.Y=8676.235mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.787mil &lt; 5mil) Between Pad R4-2(2208.945mil,3653mil) on Top Layer And Track (2187.291mil,3679.441mil)(2289.653mil,3679.441mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.787mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9841.165mil|Location2.X=9847.415mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9841.165mil|Location2.X=9847.415mil|Location1.Y=8637.658mil|Location2.Y=8643.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R5-1(2862.006mil,3625.528mil) on Top Layer And Track (2834.441mil,3647.181mil)(2889.559mil,3647.181mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9876.598mil|Location2.X=9882.848mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9876.598mil|Location2.X=9882.848mil|Location1.Y=8548.092mil|Location2.Y=8554.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R5-2(2862.006mil,3566.472mil) on Top Layer And Track (2834.441mil,3544.819mil)(2889.559mil,3544.819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9723.165mil|Location2.X=9729.415mil|Location1.Y=8785.658mil|Location2.Y=8791.908mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9723.165mil|Location2.X=9729.415mil|Location1.Y=8785.658mil|Location2.Y=8791.908mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R6-1(2744.006mil,3773.528mil) on Top Layer And Track (2716.441mil,3795.181mil)(2771.559mil,3795.181mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9758.598mil|Location2.X=9764.848mil|Location1.Y=8696.092mil|Location2.Y=8702.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9758.598mil|Location2.X=9764.848mil|Location1.Y=8696.092mil|Location2.Y=8702.342mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R6-2(2744.006mil,3714.472mil) on Top Layer And Track (2716.441mil,3692.819mil)(2771.559mil,3692.819mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8575.158mil|Location2.Y=8581.408mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8575.158mil|Location2.Y=8581.408mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R7-1(2268mil,3596mil) on Top Layer And Track (2289.653mil,3568.447mil)(2289.653mil,3623.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8575.158mil|Location2.Y=8581.408mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8575.158mil|Location2.Y=8581.408mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R7-2(2208.945mil,3596mil) on Top Layer And Track (2187.291mil,3568.447mil)(2187.291mil,3623.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9277.67mil|Location2.X=9283.92mil|Location1.Y=8683.765mil|Location2.Y=8690.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9277.67mil|Location2.X=9283.92mil|Location1.Y=8683.765mil|Location2.Y=8690.015mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.775mil &lt; 5mil) Between Pad R8-1(2268mil,3706.994mil) on Top Layer And Track (2187.291mil,3680.566mil)(2289.653mil,3680.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.775mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8686.152mil|Location2.Y=8692.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9280.131mil|Location2.X=9286.381mil|Location1.Y=8686.152mil|Location2.Y=8692.402mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R8-1(2268mil,3706.994mil) on Top Layer And Track (2289.653mil,3679.441mil)(2289.653mil,3734.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8686.152mil|Location2.Y=8692.402mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9190.564mil|Location2.X=9196.814mil|Location1.Y=8686.152mil|Location2.Y=8692.402mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.921mil &lt; 5mil) Between Pad R8-2(2208.945mil,3706.994mil) on Top Layer And Track (2187.291mil,3679.441mil)(2187.291mil,3734.559mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.921mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9218.615mil|Location2.X=9224.865mil|Location1.Y=8683.765mil|Location2.Y=8690.015mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9218.615mil|Location2.X=9224.865mil|Location1.Y=8683.765mil|Location2.Y=8690.015mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.775mil &lt; 5mil) Between Pad R8-2(2208.945mil,3706.994mil) on Top Layer And Track (2187.291mil,3680.566mil)(2289.653mil,3680.566mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.775mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8236.875mil|Location2.Y=8243.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8236.875mil|Location2.Y=8243.125mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.46mil &lt; 5mil) Between Pad SW1-1A(2237mil,3240mil) on Multi-Layer And Track (2192.157mil,3149.141mil)(2192.157mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.46mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8232.39mil|Location2.Y=8236.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8232.39mil|Location2.Y=8236.723mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad SW1-1B(2538.325mil,3239.882mil) on Multi-Layer And Track (2581.92mil,3149.141mil)(2581.92mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8436.875mil|Location2.Y=8443.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8436.875mil|Location2.Y=8443.125mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.46mil &lt; 5mil) Between Pad SW1-2A(2237mil,3440mil) on Multi-Layer And Track (2192.157mil,3149.141mil)(2192.157mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.46mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8432.39mil|Location2.Y=8436.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8432.39mil|Location2.Y=8436.723mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad SW1-2B(2538.325mil,3439.882mil) on Multi-Layer And Track (2581.92mil,3149.141mil)(2581.92mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8336.875mil|Location2.Y=8343.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.261mil|Location2.X=9200.511mil|Location1.Y=8336.875mil|Location2.Y=8343.125mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.46mil &lt; 5mil) Between Pad SW1-C1(2237mil,3340mil) on Multi-Layer And Track (2192.157mil,3149.141mil)(2192.157mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.46mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8332.39mil|Location2.Y=8336.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9579.754mil|Location2.X=9584.087mil|Location1.Y=8332.39mil|Location2.Y=8336.723mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 5mil) Between Pad SW1-C2(2538.325mil,3339.882mil) on Multi-Layer And Track (2581.92mil,3149.141mil)(2581.92mil,3526.882mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9990.175mil|Location2.X=9996.425mil|Location1.Y=8338.469mil|Location2.Y=8344.719mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9990.175mil|Location2.X=9996.425mil|Location1.Y=8338.469mil|Location2.Y=8344.719mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.189mil &lt; 5mil) Between Pad U2-1(2974.6mil,3354mil) on Top Layer And Track (2993.3mil,3324mil)(2993.3mil,3336mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.189mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10003.171mil|Location2.X=10009.421mil|Location1.Y=8412.686mil|Location2.Y=8418.936mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10003.171mil|Location2.X=10009.421mil|Location1.Y=8412.686mil|Location2.Y=8418.936mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.369mil &lt; 5mil) Between Pad U2-2(2974.6mil,3404mil) on Top Layer And Track (3011.417mil,3393.341mil)(3011.417mil,3462.239mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.369mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10003.171mil|Location2.X=10009.421mil|Location1.Y=8439.064mil|Location2.Y=8445.314mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10003.171mil|Location2.X=10009.421mil|Location1.Y=8439.064mil|Location2.Y=8445.314mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.369mil &lt; 5mil) Between Pad U2-3(2974.6mil,3454mil) on Top Layer And Track (3011.417mil,3393.341mil)(3011.417mil,3462.239mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.369mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9986.175mil|Location2.X=9992.425mil|Location1.Y=8513.781mil|Location2.Y=8520.031mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9986.175mil|Location2.X=9992.425mil|Location1.Y=8513.781mil|Location2.Y=8520.031mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (2.189mil &lt; 5mil) Between Pad U2-4(2974.6mil,3504mil) on Top Layer And Track (2989.3mil,3523mil)(2989.3mil,3532mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [2.189mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9742.175mil|Location2.X=9748.425mil|Location1.Y=8513.281mil|Location2.Y=8519.531mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9742.175mil|Location2.X=9748.425mil|Location1.Y=8513.281mil|Location2.Y=8519.531mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (1.189mil &lt; 5mil) Between Pad U2-5(2762mil,3504mil) on Top Layer And Track (2745.3mil,3522mil)(2745.3mil,3532mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [1.189mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9740.175mil|Location2.X=9746.425mil|Location1.Y=8336.969mil|Location2.Y=8343.219mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9740.175mil|Location2.X=9746.425mil|Location1.Y=8336.969mil|Location2.Y=8343.219mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.189mil &lt; 5mil) Between Pad U2-8(2762mil,3354mil) on Top Layer And Track (2743.3mil,3324mil)(2743.3mil,3333mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.189mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10145.609mil|Location2.X=10151.859mil|Location1.Y=8644.355mil|Location2.Y=8650.605mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10145.609mil|Location2.X=10151.859mil|Location1.Y=8644.355mil|Location2.Y=8650.605mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.428mil &lt; 5mil) Between Pad U5-19(3171.622mil,3647.48mil) on Top Layer And Track (3142.583mil,3644.139mil)(3142.583mil,3713.037mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.428mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10145.609mil|Location2.X=10151.859mil|Location1.Y=8486.875mil|Location2.Y=8493.125mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\LKAS-EPS_PCB_V2I1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10145.609mil|Location2.X=10151.859mil|Location1.Y=8486.875mil|Location2.Y=8493.125mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.428mil &lt; 5mil) Between Pad U5-27(3171.622mil,3490mil) on Top Layer And Track (3142.583mil,3426.761mil)(3142.583mil,3495.659mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [4.428mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

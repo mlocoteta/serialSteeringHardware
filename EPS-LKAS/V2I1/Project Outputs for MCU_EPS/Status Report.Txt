@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [EPS-LKAS Manipulator.PrjPcb]
+   Generated File[Bill of Materials-EPS-LKAS Manipulator.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:51:08 PM On 12/19/2020
