@@ -210,380 +210,140 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=BOM\Bill of Materials-EPS-LKAS Manipulator.xlsx
-DItemRevisionGUID=
-
-[GeneratedDocument2]
 DocumentPath=Project Outputs for MCU_EPS\BOM\Bill of Materials-EPS-LKAS Manipulator.xlsx
 DItemRevisionGUID=
 
-[GeneratedDocument3]
-DocumentPath=Project Outputs for MCU_EPS\BOM\Bill of Materials-LKAS_EPS.xlsx
-DItemRevisionGUID=
-
-[GeneratedDocument4]
+[GeneratedDocument2]
 DocumentPath=Project Outputs for MCU_EPS\Design Rule Check - LKAS-EPS_PCB_V2I1.html
 DItemRevisionGUID=
 
-[GeneratedDocument5]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.1
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.1
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=NC Drill\LKAS-EPS_PCB_V1I1.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V1I1.DRR
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.EXTREP
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument13]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument14]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument15]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GBP
-DItemRevisionGUID=
-
-[GeneratedDocument16]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GBP
-DItemRevisionGUID=
-
-[GeneratedDocument17]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument18]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument19]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GKO
-DItemRevisionGUID=
-
-[GeneratedDocument20]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GKO
-DItemRevisionGUID=
-
-[GeneratedDocument21]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM1
-DItemRevisionGUID=
-
-[GeneratedDocument22]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM1
-DItemRevisionGUID=
-
-[GeneratedDocument23]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM2
-DItemRevisionGUID=
-
-[GeneratedDocument24]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM2
-DItemRevisionGUID=
-
-[GeneratedDocument25]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM3
-DItemRevisionGUID=
-
-[GeneratedDocument26]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM3
-DItemRevisionGUID=
-
-[GeneratedDocument27]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM13
-DItemRevisionGUID=
-
-[GeneratedDocument28]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM13
-DItemRevisionGUID=
-
-[GeneratedDocument29]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM15
-DItemRevisionGUID=
-
-[GeneratedDocument30]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM15
-DItemRevisionGUID=
-
-[GeneratedDocument31]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM16
-DItemRevisionGUID=
-
-[GeneratedDocument32]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM16
-DItemRevisionGUID=
-
-[GeneratedDocument33]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM21
-DItemRevisionGUID=
-
-[GeneratedDocument34]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM21
-DItemRevisionGUID=
-
-[GeneratedDocument35]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM23
-DItemRevisionGUID=
-
-[GeneratedDocument36]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM23
-DItemRevisionGUID=
-
-[GeneratedDocument37]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM24
-DItemRevisionGUID=
-
-[GeneratedDocument38]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM24
-DItemRevisionGUID=
-
-[GeneratedDocument39]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM29
-DItemRevisionGUID=
-
-[GeneratedDocument40]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM29
-DItemRevisionGUID=
-
-[GeneratedDocument41]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GM30
-DItemRevisionGUID=
-
-[GeneratedDocument42]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GM30
-DItemRevisionGUID=
-
-[GeneratedDocument43]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GML
-DItemRevisionGUID=
-
-[GeneratedDocument44]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GML
-DItemRevisionGUID=
-
-[GeneratedDocument45]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument46]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument47]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument48]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument49]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GTP
-DItemRevisionGUID=
-
-[GeneratedDocument50]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GTP
-DItemRevisionGUID=
-
-[GeneratedDocument51]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument52]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument53]
-DocumentPath=NC Drill\LKAS-EPS_PCB_V1I1.LDP
-DItemRevisionGUID=
-
-[GeneratedDocument54]
-DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V1I1.LDP
-DItemRevisionGUID=
-
-[GeneratedDocument55]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.REP
-DItemRevisionGUID=
-
-[GeneratedDocument56]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.REP
-DItemRevisionGUID=
-
-[GeneratedDocument57]
-DocumentPath=Gerber\LKAS-EPS_PCB_V1I1.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument58]
-DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V1I1.RUL
-DItemRevisionGUID=
-
-[GeneratedDocument59]
-DocumentPath=NC Drill\LKAS-EPS_PCB_V1I1.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument60]
-DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V1I1.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument61]
+[GeneratedDocument3]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.1
 DItemRevisionGUID=
 
-[GeneratedDocument62]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V2I1.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument63]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument64]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GBL
 DItemRevisionGUID=
 
-[GeneratedDocument65]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GBO
 DItemRevisionGUID=
 
-[GeneratedDocument66]
+[GeneratedDocument8]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GBP
 DItemRevisionGUID=
 
-[GeneratedDocument67]
+[GeneratedDocument9]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GBS
 DItemRevisionGUID=
 
-[GeneratedDocument68]
+[GeneratedDocument10]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GKO
 DItemRevisionGUID=
 
-[GeneratedDocument69]
+[GeneratedDocument11]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM1
 DItemRevisionGUID=
 
-[GeneratedDocument70]
+[GeneratedDocument12]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM2
 DItemRevisionGUID=
 
-[GeneratedDocument71]
+[GeneratedDocument13]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM3
 DItemRevisionGUID=
 
-[GeneratedDocument72]
+[GeneratedDocument14]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM13
 DItemRevisionGUID=
 
-[GeneratedDocument73]
+[GeneratedDocument15]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM15
 DItemRevisionGUID=
 
-[GeneratedDocument74]
+[GeneratedDocument16]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM16
 DItemRevisionGUID=
 
-[GeneratedDocument75]
+[GeneratedDocument17]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM21
 DItemRevisionGUID=
 
-[GeneratedDocument76]
+[GeneratedDocument18]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM23
 DItemRevisionGUID=
 
-[GeneratedDocument77]
+[GeneratedDocument19]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM24
 DItemRevisionGUID=
 
-[GeneratedDocument78]
+[GeneratedDocument20]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM29
 DItemRevisionGUID=
 
-[GeneratedDocument79]
+[GeneratedDocument21]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GM30
 DItemRevisionGUID=
 
-[GeneratedDocument80]
+[GeneratedDocument22]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GML
 DItemRevisionGUID=
 
-[GeneratedDocument81]
+[GeneratedDocument23]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GTL
 DItemRevisionGUID=
 
-[GeneratedDocument82]
+[GeneratedDocument24]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GTO
 DItemRevisionGUID=
 
-[GeneratedDocument83]
+[GeneratedDocument25]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GTP
 DItemRevisionGUID=
 
-[GeneratedDocument84]
+[GeneratedDocument26]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.GTS
 DItemRevisionGUID=
 
-[GeneratedDocument85]
+[GeneratedDocument27]
 DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V2I1.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument86]
+[GeneratedDocument28]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.REP
 DItemRevisionGUID=
 
-[GeneratedDocument87]
+[GeneratedDocument29]
 DocumentPath=Project Outputs for MCU_EPS\Gerber\LKAS-EPS_PCB_V2I1.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument88]
+[GeneratedDocument30]
 DocumentPath=Project Outputs for MCU_EPS\NC Drill\LKAS-EPS_PCB_V2I1.TXT
 DItemRevisionGUID=
 
-[GeneratedDocument89]
-DocumentPath=Pick Place\Pick Place for LKAS-EPS_PCB_V1I1.csv
-DItemRevisionGUID=
-
-[GeneratedDocument90]
-DocumentPath=Project Outputs for MCU_EPS\Pick Place\Pick Place for LKAS-EPS_PCB_V1I1.csv
-DItemRevisionGUID=
-
-[GeneratedDocument91]
+[GeneratedDocument31]
 DocumentPath=Project Outputs for MCU_EPS\Pick Place\Pick Place for LKAS-EPS_PCB_V2I1.csv
 DItemRevisionGUID=
 
 [Parameter1]
-Name=VersionRevision
-Value=V2I1
+Name=Company
+Value=Independant
 
 [Parameter2]
 Name=Project
 Value=EPS/LKAS Manipulator
 
 [Parameter3]
-Name=Company
-Value=Independant
+Name=VersionRevision
+Value=V2I1
 
 [Configuration1]
 Name=Default Configuration
