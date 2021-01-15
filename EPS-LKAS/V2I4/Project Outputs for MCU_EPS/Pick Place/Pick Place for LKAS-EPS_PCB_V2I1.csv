@@ -1,0 +1,67 @@
+Altium Designer Pick and Place Locations
+C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\Project Outputs for MCU_EPS\Pick Place\Pick Place for LKAS-EPS_PCB_V2I1.csv
+
+========================================================================================================================
+File Design Information:
+
+Date:       15/01/21
+Time:       07:10
+Revision:   dc8cbb09d125b4f63dd3746c5db4ed98435fecea
+Variant:    No variations
+Units used: mil
+
+"Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"U6","STM32F103C6U6A","TopLayer","STM-UFQFPN48_M","3370.315","3547.339","180","ARM Cortex-M3 32-bit MCU, 32 KB Flash, 10 KB Internal RAM, 37 I/Os, 48-pin UFQFPN, -40 to 85 degC, Tray"
+"U5","STM32F103C6T7ATR","TopLayer","STM-LQFP48_L","3370.315","3547.338","180","ARM Cortex-M3 32-bit MCU, 32 KB Flash, 10 KB Internal RAM, 37 I/Os, 48-pin LQFP, -40 to 105 degC, Tape and Reel"
+"J3","10118192-0001LF","BottomLayer","FCI-10118192-0001LF-5_V","3649.343","3526.756","270","Micro USB B Type Receptacle, -55 to 85 degC, 5-Pin SMD, RoHS, Tape and Reel"
+"P1","62201421121","TopLayer","62201421121","3347.000","3836.000","180","THT Vertical Pin Header WR-PHD, Pitch 1.27 mm, Dual Row, 14 pins"
+"R15","CRCW060322R0JNTA","TopLayer","RESC1609X50X30ML10T20","3147.000","3357.000","0",""
+"R14","CRCW060322R0JNTA","TopLayer","RESC1609X50X30ML10T20","3132.000","3302.000","0",""
+"R13","4K7","TopLayer","R0603","3663.000","3879.332","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"D2","SS14","BottomLayer","FP-403AE-MFG","2206.000","2870.000","90","DIODE SCHOTTKY 40V 1A SMA"
+"D1","SS14","BottomLayer","FP-403AE-MFG","2341.000","2899.000","90","DIODE SCHOTTKY 40V 1A SMA"
+"X1","ABM7-8.000MHZ-D2Y-T","TopLayer","ABRA-ABM7-2_V","3661.000","3540.339","270","Microprocessor Crystal, 8 MHz, 18 PF, -40 to 85 degC, 2-Pin SMD, RoHS, Tape and Reel"
+"C16","CL10B475KQ8NQNC","TopLayer","FP-CL10-IPC_C","2210.649","3078.000","0","CAP CER 4.7UF 6.3V X7R 0603"
+"SW1","76STC02T","TopLayer","76STC02T","2387.662","3339.941","90","SWITCH TOGGLE DIP SPDT 150MA 30V
+WIRED:
+1  2  3
+4  5  6"
+"R12","4K7","TopLayer","R0603","3663.000","3825.332","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R11","4K7","TopLayer","R0603","3272.000","3290.006","360","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R10","RC0603FR-07560RL","TopLayer","RESC1608X55X25ML10T15","3127.000","3837.000","90","Chip Resistor, 560 Ohm, +/- 1%, 0.1 W, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel"
+"R9","RC0603FR-07560RL","TopLayer","RESC1608X55X25ML10T15","3021.709","3837.000","90","Chip Resistor, 560 Ohm, +/- 1%, 0.1 W, -55 to 155 degC, 0603 (1608 Metric), RoHS, Tape and Reel"
+"C15","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","3136.000","3427.000","90","CAP CER 0.1UF 25V X7R 0603"
+"C2","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","2158.000","2748.000","180","CAP CER 0.1UF 25V X7R 0603"
+"LED2","150080BS75000","TopLayer","0805_A","3076.000","3833.000","90","SMD mono-color Chip LED, WL-SMCW, Blue"
+"LED1","150080SS75000","TopLayer","0805_A","2971.000","3834.000","90","SMD mono-color Chip LED, WL-SMCW, Super Red"
+"U4","LM339DR2G","TopLayer","ONSC-SOIC-14-751A-03_V","2476.000","3676.724","90","Single Supply Quad Comparators, 0 to 70 degC, 14-Pin SOIC, Pb-Free, Tape and Reel"
+"R8","4K7","TopLayer","R0603","2238.472","3706.994","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R3","4K7","TopLayer","R0603","2799.006","3745.000","270","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R1","4K7","TopLayer","R0603","2238.472","3762.660","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R6","4K7","TopLayer","R0603","2744.006","3744.000","270","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"C14","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","2682.000","3743.000","90","CAP CER 0.1UF 25V X7R 0603"
+"C10","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","3173.000","3705.000","90","CAP CER 0.1UF 25V X7R 0603"
+"C9","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","3045.000","3428.000","270","CAP CER 0.1UF 25V X7R 0603"
+"C11","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","3540.000","3341.339","180","CAP CER 0.1UF 25V X7R 0603"
+"R4","4K7","TopLayer","R0603","2238.472","3653.000","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R2","4K7","TopLayer","R0603","2620.000","3464.528","90","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R7","4K7","TopLayer","R0603","2238.472","3596.000","180","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R5","4K7","TopLayer","R0603","2862.006","3596.000","270","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"C13","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","2682.000","3592.622","270","CAP CER 0.1UF 25V X7R 0603"
+"U3","MIC5504-3.3YM5-TR","TopLayer","FP-SOT23-5LD-PL-1-MFG","2209.000","2959.000","90","IC REG LINEAR 3.3V 300MA SOT23-5"
+"U2","MCP2562FD-E/SN","TopLayer","MCP2561","2868.300","3429.000","180","8 SOIC 3.90mm(.150in) TUBECAN Flexible Data Rate Transceiver"
+"U1","UA7805CKTTR","TopLayer","KTT0003A_V","2340.000","2582.181","270","Fixed Positive Voltage Regulator, 7 to 25 V, 1.5 A, 0 to 125 degC, 3-Pin DDPAK (KTT), Green (RoHS
+& no Sb/Br), Tape and Reel"
+"R23","4K7","TopLayer","R0603","2745.122","3596.000","90","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"R22","4K7","TopLayer","R0603","2804.549","3596.000","270","Res Thick Film 0603 4.7K Ohm 1% 1/10W 100ppm/C Molded SMD SMD Paper T/R"
+"J2","MX34020NF1","TopLayer","MX34020NF1","3156.719","2450.794","180","JAE MX34 Series, 2.2mm Pitch 20 Way 2 Row Right Angle PCB Header, Solder Termination, 3A"
+"J1","MX34020SF1","BottomLayer","MX34020SF1","3145.402","3087.600","180","Automotive Connectors Sckt HOUSING 20P"
+"F1","1812L050/30PR","TopLayer","LFUS-1812L05030PR_V","2442.000","3063.000","180","PTC Resettable Fuse, 0.8 W, 30 V, -40 to 85 degC, 2-Pin SMD, RoHS, Tape and Reel"
+"C12","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","3575.000","3784.000","360","CAP CER 0.1UF 25V X7R 0603"
+"C8","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","2689.000","3428.000","270","CAP CER 0.1UF 25V X7R 0603"
+"C7","CL10B475KQ8NQNC","TopLayer","FP-CL10-IPC_C","3593.940","3712.398","360","CAP CER 4.7UF 6.3V X7R 0603"
+"C6","GRM1885C1H220JA01D","TopLayer","CAPC1608X90X35ML10T15","3685.000","3722.000","90","Chip Capacitor, 22 pF, +/- 5%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel"
+"C5","GRM1885C1H220JA01D","TopLayer","CAPC1608X90X35ML10T15","3637.457","3383.339","360","Chip Capacitor, 22 pF, +/- 5%, 50 V, -55 to 125 degC, 0603 (1608 Metric), RoHS, Tape and Reel"
+"C4","CL31A106KBHNNNE","TopLayer","FP-CL31-IPC_C","2503.000","2945.000","360","CAP CER 10UF 50V X5R 1206"
+"C3","CL10B475KQ8NQNC","TopLayer","FP-CL10-IPC_C","2158.000","2816.000","180","CAP CER 4.7UF 6.3V X7R 0603"
+"C1","C0603C104M3RACTU","TopLayer","FP-C0603C-CF-MFG","2533.622","2872.000","360","CAP CER 0.1UF 25V X7R 0603"

@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: LKAS-EPS_PCB_V2I4.PcbDoc   1/15/2021  7:34:16 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : LKAS-EPS_PCB_V2I4.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.2mm)                                              Round             58        PTH        0.00inch (0.00mm)
+T2      12mil (0.305mm)                                           Round             34        PTH        0.00inch (0.00mm)
+T3      28mil (0.7mm)                                             Round             7         PTH        0.00inch (0.00mm)
+T4      28mil (0.71mm)                                            Round             6         PTH        0.00inch (0.00mm)
+T5      43mil (1.1mm)                                             Round             40        PTH        0.00inch (0.00mm)
+T6      28mil (0.7mm)                                             Round             7         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              152
+
+Total Processing Time (hh:mm:ss) : 00:00:00
