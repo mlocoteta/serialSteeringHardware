@@ -15,7 +15,7 @@ To connect the debug board to the LKAS/ECU Manipulator a 15 position 0.1" ribbon
 ## LKAS/ECU Manipulator V2
 
 Coming soon with STM32F1 MCU:
-![LKAS/ECU Manipulator Version 2 (TOP)](pics/topV2.png)
+![LKAS/ECU Manipulator Version 2 (TOP)](pics/TopV2.png)
 ![LKAS/ECU Manipulator Version 2 (Bottom)](pics/BottomV2.png)
 
 
