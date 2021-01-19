@@ -62,7 +62,7 @@ Configuration2_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|Ge
 OutputType3=Pick Place
 OutputName3=Generates pick and place files
 OutputCategory3=Assembly
-OutputDocumentPath3=LKAS-EPS_PCB_V2I1.PcbDoc
+OutputDocumentPath3=LKAS-EPS_PCB_V2I4.PcbDoc
 OutputVariantName3=
 OutputEnabled3=1
 OutputEnabled3_OutputMedium1=0
@@ -194,7 +194,7 @@ ShowComponentParameters2=1
 GlobalBookmarks2=0
 PDFACompliance2=Disabled
 PDFVersion2=Default
-OutputFilePath3=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\Project Outputs for MCU_EPS\
+OutputFilePath3=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\Project Outputs for MCU_EPS\
 ReleaseManaged3=1
 OutputBasePath3=Project Outputs for MCU_EPS
 OutputPathMedia3=
@@ -248,7 +248,7 @@ WmvQuality4=80
 [GeneratedFilesSettings]
 RelativeOutputPath2=
 OpenOutputs2=1
-RelativeOutputPath3=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I1\Project Outputs for MCU_EPS\
+RelativeOutputPath3=C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\Project Outputs for MCU_EPS\
 OpenOutputs3=1
 AddToProject3=1
 TimestampFolder3=0

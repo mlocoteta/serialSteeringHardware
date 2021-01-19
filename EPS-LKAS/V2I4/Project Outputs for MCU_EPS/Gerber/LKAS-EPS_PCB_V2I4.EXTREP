@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: LKAS-EPS_PCB_V2I4.GBR   1/15/2021  7:34:13 AM
+Gerber File Extension Report For: LKAS-EPS_PCB_V2I4.GBR   1/16/2021  8:37:11 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -28,8 +28,8 @@ Layer Extension     Layer Description
 .GM29               Top Assembly                            
 .GM30               Bottom Assembly                         
 .GKO                Keep-Out Layer                          
-.1                  Dielectric1                             
-.3                  Dielectric 2                            
 .GML                Multi-Layer                             
+.1                  Dielectric1                             
 .2                  Dielectric 1                            
+.3                  Dielectric 2                            
 ------------------------------------------------------------------------------------------
