@@ -2,6 +2,8 @@
 
 This is open source hardware for use with 2016/2017 Honda Accord's with Nidec camera units. Other form factors aren't guaranteed to fit - use at your own risk!
 
+Link which demonstrates functionality:
+<https://youtu.be/dwGLrD5iYao>
 # Boards
 ![](pics/kit.png)
 There are two boards in this package:
