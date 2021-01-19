@@ -11,7 +11,15 @@ There are two boards in this package:
 2. The debug board
 
 To connect the debug board to the LKAS/ECU Manipulator a 15 position 0.1" ribbon cable should be used. This is needed for debugging and testing different scenarios.
-## LKAS/ECU Manipulator
+
+## LKAS/ECU Manipulator V2
+
+Coming soon with STM32F1 MCU:
+![LKAS/ECU Manipulator Version 2 (TOP)](pics/topV2.jpg)
+![LKAS/ECU Manipulator Version 2 (Bottom)](pics/BottomV2.jpg)
+
+
+## LKAS/ECU Manipulator V1
 
 Below is the basic layout and functions of the board. 
 ![LKAS/ECU Manipulator PCB without Teensy 4.0](pics/diagram.png)
@@ -46,7 +54,7 @@ For the latest OP open source firmware - visit:
 In the Firmware Folder is an example sketch which simulates can simulate a brief torque to the steering wheel.
 
 ## In Progress:
-Currently in development is a smaller, more universal version of the EPS/LKAS Manipulator.
+Firmware development of the smaller EPS/LKAS Manipulator.
 
 ## License and Terms of Use:
 
