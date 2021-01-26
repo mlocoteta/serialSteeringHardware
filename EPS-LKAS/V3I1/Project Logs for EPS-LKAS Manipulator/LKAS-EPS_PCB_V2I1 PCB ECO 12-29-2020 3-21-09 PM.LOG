@@ -1,4 +1,0 @@
-Removed Pin From Net: NetName=BOOT0 Pin=R13-1
-Removed Pin From Net: NetName=SHIELD Pin=R13-2
-Added Pin To Net: NetName=SHIELD Pin=R13-1
-Added Pin To Net: NetName=GND Pin=R13-2

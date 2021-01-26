@@ -1,7 +1,0 @@
-Added Component: Designator=R16(RESC1609X50X30ML10T20)
-Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Part Number"; Value = "CRCW06031K50FKTA"; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Res"; Value = "1K5"; VariantName = "[No Variations]"
-Added Pin To Net: NetName=USB_P Pin=R16-1
-Added Pin To Net: NetName=+3V3 Pin=R16-2
-Added Member To Class: ClassName=[03] - CONTROLLER Member=Component R16 CRCW06031K50FKTA
