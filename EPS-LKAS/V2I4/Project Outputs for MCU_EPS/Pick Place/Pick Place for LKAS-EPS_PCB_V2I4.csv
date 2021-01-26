@@ -4,13 +4,14 @@ C:\Users\mloco\Google Drive\Design\Altium Design Files\Design Files\serialSteeri
 ========================================================================================================================
 File Design Information:
 
-Date:       16/01/21
-Time:       20:37
-Revision:   f0d6bdc7c18e3fc5728eb200946d9bf14b635e39
+Date:       25/01/21
+Time:       22:16
+Revision:   88965a135e43cefac3332888c705609e299d2a0b
 Variant:    No variations
 Units used: mil
 
 "Designator","Comment","Layer","Footprint","Center-X(mil)","Center-Y(mil)","Rotation","Description"
+"R16","CRCW06031K50FKTA","BottomLayer","RESC1609X50X30ML10T20","3846.575","3031.000","180",""
 "J2","MX34020NF1","TopLayer","MX34020NF1","3567.244","2968.740","270","JAE MX34 Series, 2.2mm Pitch 20 Way 2 Row Right Angle PCB Header, Solder Termination, 3A"
 "U5/6","STM32F103C6U6A","BottomLayer","STM-UFQFPN48_M","3183.307","3223.307","360","ARM Cortex-M3 32-bit MCU, 32 KB Flash, 10 KB Internal RAM, 37 I/Os, 48-pin UFQFPN, -40 to 85 degC, Tray"
 "P2","5-146280-2","BottomLayer","TECO-5-146280-2_V","3290.000","2935.000","180","Male Header, Pitch 2.54 mm, 1 x 2 Position, Height 8.21 mm, Tail Length 3.05 mm, -65 to 105 degC, RoHS, Bulk"
