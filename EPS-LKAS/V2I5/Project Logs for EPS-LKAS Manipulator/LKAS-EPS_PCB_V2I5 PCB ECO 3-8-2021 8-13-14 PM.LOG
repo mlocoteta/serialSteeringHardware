@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=SW2-2
+Removed Pin From Net: NetName=NRST Pin=SW2-3
+Change Component Footprint: Designator=SW2 Old Footprint=FP-PTS645SM43SMTR92LFS-MFG New Footprint=OMRON-B3S-1000-4_V
+Change Component Comment : Designator=SW2 Old Comment=PTS645SM43SMTR92LFS New Comment=B3S-1000
+Added Pin To Net: NetName=NRST Pin=SW2-1
+Added Pin To Net: NetName=GND Pin=SW2-4

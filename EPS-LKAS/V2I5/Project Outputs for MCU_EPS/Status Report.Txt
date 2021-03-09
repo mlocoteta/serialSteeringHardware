@@ -1,0 +1,10 @@
+Output: Generates pick and place files
+Type  : Pick Place
+From  : Variant [[No Variations]] of PCB Document [LKAS-EPS_PCB_V2I5.PcbDoc]
+   Generated File[Pick Place for LKAS-EPS_PCB_V2I5.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 8:50:43 PM On 3/8/2021

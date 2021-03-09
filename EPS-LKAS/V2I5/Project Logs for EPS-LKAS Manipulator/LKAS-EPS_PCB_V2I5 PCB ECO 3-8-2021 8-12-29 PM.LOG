@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=GND Pin=SW2-2
+Removed Pin From Net: NetName=NRST Pin=SW2-3
+Change Component Footprint: Designator=SW2 Old Footprint=FP-PTS645SM43SMTR92LFS-MFG New Footprint=OMRON-B3S-1000-4_V
+Change Component Comment : Designator=SW2 Old Comment=PTS645SM43SMTR92LFS New Comment=B3S-1000
+Change Managed Component Library Link : Designator=SW2 Old VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 New VaultGUID=B7D15EC3-160A-466F-A46C-7801FE6295A7 Old ItemGUID=7D918995-645B-4FDC-8095-80E6DB4A866E New ItemGUID=1EA2ECAF-1A02-46AA-B84E-0A5C5BCF8B37 Old RevisionGUID=E6641D53-F4A8-473F-974D-480283649054 New RevisionGUID=316D832B-205A-4886-BC53-D7E5C320DD61
+Change component parameters: Designator = "SW2" ("SW2"); Footprint = "FP-PTS645SM43SMTR92LFS-MFG"; UniqueID = "\XWMFVYGS" ("\XWMFVYGS")
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "Manufacturer URL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.omron.com/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink2URL"; Value = "http://www.omron.com/ecb/products/pdf/en-b3s.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Contact Plating"; Value = "Silver"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "50 mA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "DatasheetVersion"; Value = "10/2014"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Height"; Value = "4.3 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Length"; Value = "6.6 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "Omron"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Max Operating Temperature"; Value = "70 degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Min Operating Temperature"; Value = "-25 degC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Technology"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package Quantity"; Value = "1500"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "4-Pin Surface Mount Device, Body 6.6 x 6 mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "B3S-1000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHSCompliant"; Value = "true"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Voltage Rating"; Value = "24 V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NRST Pin=SW2-1
+Added Pin To Net: NetName=GND Pin=SW2-4
+Added Room: Name=[03] - CONTROLLER

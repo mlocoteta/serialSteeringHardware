@@ -1,0 +1,522 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">3/8/2021</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">8:39:15 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc" class="file"><acronym title="C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc">C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">62</td></tr>
+</table>
+</td>
+</table><a name="IDN3XPAAZRISVJ3I5GDZHB1IONIQR5OF2V5GG5SDT5BMTAASKWVH"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDP3AWMERGXAH5E4IEPSQJZYZWJDQDZXHHMNFULJQVKTITI0VUUUB">Clearance Constraint (Gap=0.102mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDFP1LTWUYDNHWCG4W1IPHQU21M3B3A5Y5HBGOBKA53ECIUF0EIYN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDMRDV5I2DMCLXCTRHCPJTNYO1ZP1FHERWSOYKYROLXMDXGA0FJIZJ">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDBOKJAXU33VWWLNSZE25NEVQDBN0DUMMBYSQTG4J42WW4GJEZ1QFD">Width Constraint (Min=0.102mm) (Max=1816.048mm) (Preferred=0.152mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1I1WWQXDGFAZKYV30GUO0CPUXCNV3OSPDDIIBSLFROBB2KRLZVZC">Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InPadClass('PowerPads'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXEN4EZH4KOWNHUGFTGHRAJRA3GHSJ3NAYWVAIDP4RZAYTBWFRU1P">Power Plane Connect Rule(Relief Connect )(Expansion=0.3mm) (Conductor Width=0.102mm) (Air Gap=0.102mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID112Y45ZUCNOPL0WI1M4KLCUCWMFCRJWATPLYG3CZ1GNR5FXVQS1C">Minimum Annular Ring (Minimum=0.076mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOPHLW4OYMFA5DW1SW0QGS5TIQOEPAMFJZBBZ1WELBG30CRVKCJVH">Hole Size Constraint (Min=0.2mm) (Max=6.3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDH0HANMI12TBVI5GJGDCPVRV2XDMSDGJYTUUAWTKL1IP2CA3TG24C">Hole To Hole Clearance (Gap=0.25mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDCVW55VWPB2HRJKCGIMVQJMR5OOIS2OWB2EDFNTFGSYHQD3EZNR3L">Minimum Solder Mask Sliver (Gap=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHYUUYD0CCUJ4IQHBKC01YT50OBKIKITYBBTIQFI031B2P3DHLWYF">Silk To Solder Mask (Clearance=0.102mm) (IsPad),(All)</a></td>
+<td class="column2">62</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID3WTWZ3S5AOEGLIG05L4IG2EJSFFARCQXAKF01MLIQKEANA1BOEBM">Silk to Silk (Clearance=0mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDORJWYKCPGFIQRJ5UNV0E3APKDGGJUCBGF0C0XCUMPW1FENOOIVC">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIYWSG3WT0XHTKCNAXMW0WNP11DZF5CTDK5KILWJPAXTODGEVFI">Matched Lengths(Tolerance=3.81mm) (InNet('USB_N'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1C0GXPNREEE5HBYRYWTDP5GASCDFBEFRD1KTNMLX0B1KIXDTMIKJ">Height Constraint (Min=0mm) (Max=1816.048mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">62</td>
+</tr>
+</table><br><a name="IDHYUUYD0CCUJ4IQHBKC01YT50OBKIKITYBBTIQFI031B2P3DHLWYF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.102mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9284.147mil|Location2.X=9289.397mil|Location1.Y=8026.586mil|Location2.Y=8031.836mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9284.147mil|Location2.X=9289.397mil|Location1.Y=8026.586mil|Location2.Y=8031.836mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.07mm &lt; 0.102mm) Between Arc (58.369mm,76.942mm) on Bottom Overlay And Pad U3-1(57.719mm,77.059mm) on Bottom Layer [Bottom Overlay] to [Bottom Solder] clearance [0.07mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10323.989mil|Location2.X=10329.239mil|Location1.Y=8070.584mil|Location2.Y=8075.834mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10323.989mil|Location2.X=10329.239mil|Location1.Y=8070.584mil|Location2.Y=8075.834mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.102mm) Between Pad C11-1(84.871mm,77.597mm) on Bottom Layer And Track (84.131mm,78.172mm)(84.556mm,78.172mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10326.351mil|Location2.X=10331.601mil|Location1.Y=8070.584mil|Location2.Y=8075.834mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10326.351mil|Location2.X=10331.601mil|Location1.Y=8070.584mil|Location2.Y=8075.834mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.025mm &lt; 0.102mm) Between Pad C11-1(84.871mm,77.597mm) on Bottom Layer And Track (84.556mm,78.172mm)(84.556mm,78.597mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.025mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9933.379mil|Location2.X=9938.629mil|Location1.Y=8248.175mil|Location2.Y=8253.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9933.379mil|Location2.X=9938.629mil|Location1.Y=8248.175mil|Location2.Y=8253.425mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.092mm &lt; 0.102mm) Between Pad C12-2(74.854mm,82.991mm) on Bottom Layer And Text "C12" (75.336mm,82.448mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.092mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8392.046mil|Location2.Y=8395.712mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8392.046mil|Location2.Y=8395.712mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad C13-1(56.336mm,86.58mm) on Bottom Layer And Track (55.789mm,85.88mm)(55.789mm,88.48mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8439.29mil|Location2.Y=8442.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8439.29mil|Location2.Y=8442.956mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad C13-2(56.336mm,87.78mm) on Bottom Layer And Track (55.789mm,85.88mm)(55.789mm,88.48mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8329.532mil|Location2.Y=8333.198mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8329.532mil|Location2.Y=8333.198mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad C14-1(56.333mm,84.992mm) on Bottom Layer And Track (55.789mm,83.092mm)(55.789mm,85.692mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8282.288mil|Location2.Y=8285.954mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9194.592mil|Location2.X=9198.258mil|Location1.Y=8282.288mil|Location2.Y=8285.954mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad C14-2(56.333mm,83.792mm) on Bottom Layer And Track (55.789mm,83.092mm)(55.789mm,85.692mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9306.003mil|Location2.X=9315.157mil|Location1.Y=7995.34mil|Location2.Y=8002.187mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9306.003mil|Location2.X=9315.157mil|Location1.Y=7995.34mil|Location2.Y=8002.187mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.06mm &lt; 0.102mm) Between Pad C4-2(58.045mm,75.311mm) on Bottom Layer And Text "C4" (59.156mm,77.8mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.06mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9656.75mil|Location2.X=9662mil|Location1.Y=8287.044mil|Location2.Y=8292.294mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9656.75mil|Location2.X=9662mil|Location1.Y=8287.044mil|Location2.Y=8292.294mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.07mm &lt; 0.102mm) Between Pad C5-2(68.058mm,83.033mm) on Bottom Layer And Text "C5" (67.437mm,83.845mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.07mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9129.159mil|Location2.X=9132.826mil|Location1.Y=8138.172mil|Location2.Y=8141.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9129.159mil|Location2.X=9132.826mil|Location1.Y=8138.172mil|Location2.Y=8141.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad F1-1(52.832mm,78.815mm) on Bottom Layer And Text "U3" (54.28mm,79.756mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7530.298mil|Location2.Y=7533.965mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7530.298mil|Location2.Y=7533.965mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J1-1(66.173mm,65.605mm) on Multi-Layer And Track (65.942mm,89.92mm)(65.942mm,61.218mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10591.19mil|Location2.X=10594.857mil|Location1.Y=7575.108mil|Location2.Y=7578.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10591.19mil|Location2.X=10594.857mil|Location1.Y=7575.108mil|Location2.Y=7578.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-1(92.358mm,66.056mm) on Multi-Layer And Track (89.852mm,65.454mm)(99.752mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10683.181mil|Location2.X=10686.848mil|Location1.Y=8362.165mil|Location2.Y=8365.831mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10683.181mil|Location2.X=10686.848mil|Location1.Y=8362.165mil|Location2.Y=8365.831mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-10(92.358mm,85.856mm) on Multi-Layer And Text "R12" (95.885mm,84.836mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10609.895mil|Location2.X=10615.145mil|Location1.Y=8405.239mil|Location2.Y=8410.489mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10609.895mil|Location2.X=10615.145mil|Location1.Y=8405.239mil|Location2.Y=8410.489mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.007mm &lt; 0.102mm) Between Pad J2-10(92.358mm,85.856mm) on Multi-Layer And Track (89.207mm,86.663mm)(93.877mm,86.663mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.007mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7527.918mil|Location2.Y=7531.584mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7527.918mil|Location2.Y=7531.584mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-11(88.858mm,64.956mm) on Multi-Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10535.661mil|Location2.X=10539.327mil|Location1.Y=7527.968mil|Location2.Y=7531.635mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10535.661mil|Location2.X=10539.327mil|Location1.Y=7527.968mil|Location2.Y=7531.635mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-11(88.858mm,64.956mm) on Multi-Layer And Track (89.852mm,55.86mm)(89.852mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10535.661mil|Location2.X=10539.327mil|Location1.Y=7575.108mil|Location2.Y=7578.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10535.661mil|Location2.X=10539.327mil|Location1.Y=7575.108mil|Location2.Y=7578.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-11(88.858mm,64.956mm) on Multi-Layer And Track (89.852mm,65.454mm)(99.752mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7614.532mil|Location2.Y=7618.199mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7614.532mil|Location2.Y=7618.199mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-12(88.858mm,67.156mm) on Multi-Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7701.146mil|Location2.Y=7704.813mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7701.146mil|Location2.Y=7704.813mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-13(88.858mm,69.356mm) on Multi-Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7787.76mil|Location2.Y=7791.427mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7787.76mil|Location2.Y=7791.427mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-14(88.858mm,71.556mm) on Multi-Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10482.891mil|Location2.X=10486.558mil|Location1.Y=7871.04mil|Location2.Y=7874.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10482.891mil|Location2.X=10486.558mil|Location1.Y=7871.04mil|Location2.Y=7874.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-15(88.858mm,73.756mm) on Multi-Layer And Track (62.363mm,72.971mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7871.04mil|Location2.Y=7874.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7871.04mil|Location2.Y=7874.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J2-15(88.858mm,73.756mm) on Multi-Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10906.478mil|Location2.X=10910.144mil|Location1.Y=8091.478mil|Location2.Y=8095.144mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10906.478mil|Location2.X=10910.144mil|Location1.Y=8091.478mil|Location2.Y=8095.144mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad J3-9(98.654mm,77.79mm) on Top Layer And Text "1" (99.271mm,78.57mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10209.026mil|Location2.X=10212.693mil|Location1.Y=7939.297mil|Location2.Y=7942.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10209.026mil|Location2.X=10212.693mil|Location1.Y=7939.297mil|Location2.Y=7942.963mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad P2-2(82.296mm,74.549mm) on Multi-Layer And Text "R11" (81.559mm,75.311mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10524.289mil|Location2.X=10527.956mil|Location1.Y=8468.334mil|Location2.Y=8472mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10524.289mil|Location2.X=10527.956mil|Location1.Y=8468.334mil|Location2.Y=8472mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad P3-1(90.272mm,87.833mm) on Multi-Layer And Text "20" (88.04mm,88.904mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10664.289mil|Location2.X=10667.956mil|Location1.Y=8440.544mil|Location2.Y=8444.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10664.289mil|Location2.X=10667.956mil|Location1.Y=8440.544mil|Location2.Y=8444.211mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad P3-2(92.812mm,87.833mm) on Multi-Layer And Text "10" (91.596mm,89.412mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9486.444mil|Location2.X=9490.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9486.444mil|Location2.X=9490.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R1-2(63.652mm,56.603mm) on Bottom Layer And Track (62.363mm,56.969mm)(88.525mm,56.969mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10406.444mil|Location2.X=10410.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10406.444mil|Location2.X=10410.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R2-2(87.02mm,56.781mm) on Bottom Layer And Track (62.363mm,56.969mm)(88.525mm,56.969mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9100.154mil|Location2.X=9103.821mil|Location1.Y=8474.173mil|Location2.Y=8477.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9100.154mil|Location2.X=9103.821mil|Location1.Y=8474.173mil|Location2.Y=8477.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R22-2(53.668mm,87.93mm) on Bottom Layer And Text "C13" (53.543mm,88.291mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8447.164mil|Location2.Y=8450.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8447.164mil|Location2.Y=8450.83mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R23-1(55.089mm,87.93mm) on Bottom Layer And Track (55.483mm,86.31mm)(55.483mm,88.06mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8396.193mil|Location2.Y=8399.859mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8396.193mil|Location2.Y=8399.859mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R23-2(55.089mm,86.43mm) on Bottom Layer And Track (55.483mm,86.31mm)(55.483mm,88.06mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7279.899mil|Location2.Y=7283.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7279.899mil|Location2.Y=7283.566mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R5-1(88.417mm,58.281mm) on Bottom Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10461.444mil|Location2.X=10465.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10461.444mil|Location2.X=10465.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R5-2(88.417mm,56.781mm) on Bottom Layer And Track (62.363mm,56.969mm)(88.525mm,56.969mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10483.403mil|Location2.X=10487.07mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R5-2(88.417mm,56.781mm) on Bottom Layer And Track (88.525mm,56.969mm)(88.525mm,72.971mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8286.225mil|Location2.Y=8289.891mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8286.225mil|Location2.Y=8289.891mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R6-1(55.089mm,83.642mm) on Bottom Layer And Track (55.483mm,83.517mm)(55.483mm,85.267mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8337.406mil|Location2.Y=8341.072mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.545mil|Location2.X=9186.211mil|Location1.Y=8337.406mil|Location2.Y=8341.072mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R6-2(55.089mm,85.142mm) on Bottom Layer And Track (55.483mm,83.517mm)(55.483mm,85.267mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9540.444mil|Location2.X=9544.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9540.444mil|Location2.X=9544.11mil|Location1.Y=7241.04mil|Location2.Y=7244.707mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad R8-2(65.024mm,56.603mm) on Bottom Layer And Track (62.363mm,56.969mm)(88.525mm,56.969mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10592.163mil|Location2.X=10595.829mil|Location1.Y=7257.161mil|Location2.Y=7260.828mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10592.163mil|Location2.X=10595.829mil|Location1.Y=7257.161mil|Location2.Y=7260.828mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad SW1-1A(90.991mm,58.168mm) on Multi-Layer And Text "R2" (91.745mm,56.464mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7287.434mil|Location2.Y=7292.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7287.434mil|Location2.Y=7292.684mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.012mm &lt; 0.102mm) Between Pad SW1-1A(90.991mm,58.168mm) on Multi-Layer And Track (89.852mm,55.86mm)(89.852mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.012mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7487.434mil|Location2.Y=7492.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7487.434mil|Location2.Y=7492.684mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.012mm &lt; 0.102mm) Between Pad SW1-2A(90.991mm,63.248mm) on Multi-Layer And Track (89.852mm,55.86mm)(89.852mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.012mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10545.381mil|Location2.X=10549.048mil|Location1.Y=7408.324mil|Location2.Y=7411.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10545.381mil|Location2.X=10549.048mil|Location1.Y=7408.324mil|Location2.Y=7411.991mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad SW1-C1(90.991mm,60.708mm) on Multi-Layer And Track (65.942mm,61.218mm)(94.136mm,61.218mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7387.434mil|Location2.Y=7392.684mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10540.099mil|Location2.X=10545.349mil|Location1.Y=7387.434mil|Location2.Y=7392.684mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.012mm &lt; 0.102mm) Between Pad SW1-C1(90.991mm,60.708mm) on Multi-Layer And Track (89.852mm,55.86mm)(89.852mm,65.454mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.012mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7408.324mil|Location2.Y=7411.991mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7408.324mil|Location2.Y=7411.991mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad SW2-3(65.087mm,61.102mm) on Top Layer And Track (65.942mm,61.218mm)(94.136mm,61.218mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7429.34mil|Location2.Y=7433.006mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9594.308mil|Location2.X=9597.975mil|Location1.Y=7429.34mil|Location2.Y=7433.006mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad SW2-3(65.087mm,61.102mm) on Top Layer And Track (65.942mm,89.92mm)(65.942mm,61.218mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9203.482mil|Location2.X=9207.148mil|Location1.Y=7853.702mil|Location2.Y=7857.369mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9203.482mil|Location2.X=9207.148mil|Location1.Y=7853.702mil|Location2.Y=7857.369mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U1-2(56.515mm,70.764mm) on Bottom Layer And Track (55.005mm,72.531mm)(56.755mm,72.531mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9303.482mil|Location2.X=9307.148mil|Location1.Y=7853.584mil|Location2.Y=7857.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9303.482mil|Location2.X=9307.148mil|Location1.Y=7853.584mil|Location2.Y=7857.251mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U1-3(59.055mm,70.764mm) on Bottom Layer And Track (57.413mm,72.528mm)(59.163mm,72.528mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9435.173mil|Location2.X=9438.839mil|Location1.Y=7370.159mil|Location2.Y=7373.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9435.173mil|Location2.X=9438.839mil|Location1.Y=7370.159mil|Location2.Y=7373.825mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U1-4(56.515mm,60.164mm) on Bottom Layer And Text "R1" (62.814mm,60.249mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9913.375mil|Location2.X=9918.625mil|Location1.Y=8089.78mil|Location2.Y=8095.03mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9913.375mil|Location2.X=9918.625mil|Location1.Y=8089.78mil|Location2.Y=8095.03mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.03mm &lt; 0.102mm) Between Pad U2-1(73.591mm,78.232mm) on Bottom Layer And Track (74.066mm,78.689mm)(74.066mm,78.994mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.03mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9927.021mil|Location2.X=9932.271mil|Location1.Y=8015.564mil|Location2.Y=8020.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9927.021mil|Location2.X=9932.271mil|Location1.Y=8015.564mil|Location2.Y=8020.814mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.093mm &lt; 0.102mm) Between Pad U2-2(73.591mm,76.962mm) on Bottom Layer And Track (74.56mm,75.711mm)(74.56mm,77.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.093mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9927.021mil|Location2.X=9932.271mil|Location1.Y=7989.186mil|Location2.Y=7994.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9927.021mil|Location2.X=9932.271mil|Location1.Y=7989.186mil|Location2.Y=7994.436mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.093mm &lt; 0.102mm) Between Pad U2-3(73.591mm,75.692mm) on Bottom Layer And Track (74.56mm,75.711mm)(74.56mm,77.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.093mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9909.375mil|Location2.X=9914.625mil|Location1.Y=7914.47mil|Location2.Y=7919.72mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9909.375mil|Location2.X=9914.625mil|Location1.Y=7914.47mil|Location2.Y=7919.72mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.056mm &lt; 0.102mm) Between Pad U2-4(73.591mm,74.422mm) on Bottom Layer And Track (73.965mm,73.711mm)(73.965mm,73.939mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.056mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9665.375mil|Location2.X=9670.625mil|Location1.Y=7914.97mil|Location2.Y=7920.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9665.375mil|Location2.X=9670.625mil|Location1.Y=7914.97mil|Location2.Y=7920.22mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.03mm &lt; 0.102mm) Between Pad U2-5(68.191mm,74.422mm) on Bottom Layer And Track (67.767mm,73.711mm)(67.767mm,73.965mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.03mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.773mil|Location2.X=9186.44mil|Location1.Y=8052.159mil|Location2.Y=8055.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9182.773mil|Location2.X=9186.44mil|Location1.Y=8052.159mil|Location2.Y=8055.825mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U3-3(55.819mm,77.059mm) on Bottom Layer And Text "F1" (55.829mm,77.571mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9181.981mil|Location2.X=9187.231mil|Location1.Y=8153.615mil|Location2.Y=8158.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9181.981mil|Location2.X=9187.231mil|Location1.Y=8153.615mil|Location2.Y=8158.865mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.019mm &lt; 0.102mm) Between Pad U3-4(55.819mm,79.659mm) on Bottom Layer And Track (54.47mm,80.278mm)(56.528mm,80.278mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.019mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9256.784mil|Location2.X=9262.034mil|Location1.Y=8153.615mil|Location2.Y=8158.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9256.784mil|Location2.X=9262.034mil|Location1.Y=8153.615mil|Location2.Y=8158.865mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.019mm &lt; 0.102mm) Between Pad U3-5(57.719mm,79.659mm) on Bottom Layer And Track (56.883mm,80.278mm)(58.941mm,80.278mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.019mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9298.792mil|Location2.X=9304.042mil|Location1.Y=8232.592mil|Location2.Y=8237.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9298.792mil|Location2.X=9304.042mil|Location1.Y=8232.592mil|Location2.Y=8237.842mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.093mm &lt; 0.102mm) Between Pad U4-14(58.166mm,82.811mm) on Bottom Layer And Track (56.883mm,82.028mm)(58.941mm,82.028mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.093mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8290.371mil|Location2.Y=8294.038mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8290.371mil|Location2.Y=8294.038mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U6-10(77.356mm,83.622mm) on Bottom Layer And Track (75.707mm,82.711mm)(75.707mm,84.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8310.057mil|Location2.Y=8313.723mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8310.057mil|Location2.Y=8313.723mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U6-11(77.356mm,84.122mm) on Bottom Layer And Track (75.707mm,82.711mm)(75.707mm,84.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9981.09mil|Location2.X=9988.451mil|Location1.Y=8322.689mil|Location2.Y=8330.735mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9981.09mil|Location2.X=9988.451mil|Location1.Y=8322.689mil|Location2.Y=8330.735mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.016mm &lt; 0.102mm) Between Pad U6-12(77.356mm,84.622mm) on Bottom Layer And Track (75.707mm,82.711mm)(75.707mm,84.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0.016mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8254.508mil|Location2.Y=8258.174mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8254.508mil|Location2.Y=8258.174mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U6-8(77.356mm,82.622mm) on Bottom Layer And Track (75.707mm,82.711mm)(75.707mm,84.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8270.686mil|Location2.Y=8274.353mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\mloco\OneDrive\Desktop\old\Google Drive\Design\Altium Design Files\Design Files\serialSteeringHardware\EPS-LKAS\V2I4\LKAS-EPS_PCB_V2I5.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9978.749mil|Location2.X=9982.416mil|Location1.Y=8270.686mil|Location2.Y=8274.353mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.102mm) Between Pad U6-9(77.356mm,83.122mm) on Bottom Layer And Track (75.707mm,82.711mm)(75.707mm,84.461mm) on Bottom Overlay [Bottom Overlay] to [Bottom Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
