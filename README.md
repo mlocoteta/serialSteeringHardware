@@ -14,10 +14,12 @@ To connect the debug board to the LKAS/ECU Manipulator a 15 position 0.1" ribbon
 
 ## LKAS/ECU Manipulator V2
 
-Coming soon with STM32F1 MCU:
+[Click here to purchase Development board.](https://devinstruments.com/)
+
+Smaller form factor using STM32F1 MCU.
+
 ![LKAS/ECU Manipulator Version 2 (TOP)](pics/TopV2.png)
 ![LKAS/ECU Manipulator Version 2 (Bottom)](pics/BottomV2.png)
-
 
 ## LKAS/ECU Manipulator V1
 
@@ -49,12 +51,13 @@ The board consists of:
 - Ribbon cable connector
 ## Firmware
 For the latest OP open source firmware - visit:
+V1 Board:
 [https://github.com/reddn/AccordManualSteering](https://github.com/reddn/AccordManualSteering)
 
+V2 Board:
+[https://github.com/reddn/LINInterfaceV2](https://github.com/reddn/LINInterfaceV2)
 In the Firmware Folder is an example sketch which simulates can simulate a brief torque to the steering wheel.
 
-## In Progress:
-Firmware development of the smaller EPS/LKAS Manipulator.
 
 ## License and Terms of Use:
 
