@@ -1,4 +1,4 @@
-# LKAS/ECU Manipulator
+# LKAS/ECU Data Interceptor
 
 This is open source hardware for use with 2016/2017 Honda Accord's with Nidec camera units. Other form factors aren't guaranteed to fit - use at your own risk!
 
